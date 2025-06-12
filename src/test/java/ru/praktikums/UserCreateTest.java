@@ -1,4 +1,4 @@
-package ru.praktikums.tests;
+package ru.praktikums;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;

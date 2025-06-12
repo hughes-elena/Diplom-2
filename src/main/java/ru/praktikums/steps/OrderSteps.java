@@ -6,8 +6,8 @@ import io.restassured.response.ValidatableResponse;
 import ru.praktikums.constants.ApiEndPoints;
 import ru.praktikums.models.pojo.OrderCreateRequest;
 import ru.praktikums.models.pojo.UserLoginRequest;
-import static ru.praktikums.steps.BaseSteps.requestSpecification;
 
+import static ru.praktikums.steps.BaseSteps.requestSpecification;
 
 
 public class OrderSteps {
@@ -32,7 +32,8 @@ public class OrderSteps {
                 .then();
     }
 
-    @Step("Получение заказов без авторизации")
+   /* Неиспользуемые методы спрятала в коммент
+       @Step("Получение заказов без авторизации")
     public ValidatableResponse orderList() {
         return requestSpecification()
                 .get(ApiEndPoints.ORDER_CREATE_POST)
@@ -47,6 +48,6 @@ public class OrderSteps {
                 .header("Authorization", accessToken)
                 .get(ApiEndPoints.ORDER_CREATE_POST)
                 .then();
-    }
+    }*/
 
 }
