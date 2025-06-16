@@ -8,6 +8,7 @@ import io.restassured.specification.RequestSpecification;
 import ru.praktikums.constants.ApiEndPoints;
 import ru.praktikums.models.pojo.UserCreateAndEditRequest;
 import ru.praktikums.models.pojo.UserLoginRequest;
+
 import static ru.praktikums.steps.BaseSteps.requestSpecification;
 import static io.restassured.RestAssured.given;
 
@@ -40,6 +41,7 @@ public class UserSteps {
                 .extract()
                 .path("accessToken");
     }
+
     @Step("Изменение данных пользователя без авторизации")
     public ValidatableResponse userEdit(UserCreateAndEditRequest userCreateAndEditRequest) {
         return requestSpecification()
@@ -67,7 +69,7 @@ public class UserSteps {
                 .then();
     }
 
-    @Step ("Удаление пользователя после авторизации")
+    @Step("Удаление пользователя после авторизации")
     public ValidatableResponse userDeleteAfterLogin(UserLoginRequest userLoginRequest) {
 
         String accessToken = getAccessToken(userLoginRequest); // Достаём accessToken из JSON-ответа
